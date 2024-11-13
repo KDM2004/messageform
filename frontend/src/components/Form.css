@@ -1,0 +1,146 @@
+/* Dark theme background and form container styles */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Form container */
+.form-container {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background emoji animation */
+.form-container::before {
+  content: "😊 😂 😎 😍 🥳";
+  font-size: 2.5rem;
+  opacity: 0.2;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%) rotate(20deg);
+  animation: floatEmojis 8s linear infinite;
+}
+
+@keyframes floatEmojis {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+/* Form fields */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #e0e0e0;
+  font-size: 1rem;
+  outline: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  transform: scale(1.05);
+}
+
+/* Button styling */
+button[type="submit"] {
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3;
+  transform: scale(1.05);
+}
+
+/* Success message styling */
+.success-container {
+  color: #4caf50;
+  text-align: center;
+  padding: 2rem;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.success-animation {
+  font-size: 2rem;
+  margin-top: 1rem;
+  animation: bounce 1.5s infinite;
+}
+
+/* Error message styling */
+.error-container {
+  color: #e57373;
+  text-align: center;
+  padding: 2rem;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.error-animation {
+  font-size: 2rem;
+  margin-top: 1rem;
+  animation: shake 0.5s infinite;
+}
+
+/* Success animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Error animation */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
