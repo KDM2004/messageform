@@ -12,7 +12,8 @@ const Form = ({ setStatus }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/submit", formData);
+      // Use environment variable for the base API URL
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/submit`, formData);
       setStatus("success");
     } catch (error) {
       setStatus("error");
